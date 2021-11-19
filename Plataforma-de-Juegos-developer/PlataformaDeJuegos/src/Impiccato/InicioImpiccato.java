@@ -208,7 +208,6 @@ public class InicioImpiccato extends javax.swing.JInternalFrame {
                     // SI SE LLEGA A LOS 5 ERRORES ENTONCES SE PIERDE EL JUEGO Y SE MANDA EL MENSAGE DE:
                     if (err == 5) {
                         JOptionPane.showMessageDialog(this, "¡PALABRA INCORRECTA!\nPerdiste 5 puntos\nLa respuesta es: " + msgs[ran], "Impiccato",JOptionPane.INFORMATION_MESSAGE, cara);
-                        labelPuntaje.setText(Integer.toString(Integer.parseInt(labelPuntaje.getText())-5));
                         iniciar();
                         return;
                     }
@@ -765,7 +764,6 @@ public class InicioImpiccato extends javax.swing.JInternalFrame {
                 "Impiccato", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE) == JOptionPane.YES_OPTION)
             
         {
-            labelPuntaje.setText(Integer.toString(Integer.parseInt(labelPuntaje.getText())-1));
             contadorJugadas.setText(Integer.toString(Integer.parseInt(contadorJugadas.getText())+1));
             iniciar();
         }

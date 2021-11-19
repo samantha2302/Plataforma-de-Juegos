@@ -1,5 +1,6 @@
 package Impiccato;
 
+import Archivos.DataImpicccato;
 import static VentanaPrincipal.VentanaPrincipal.escritorio;
 import java.awt.Font;
 import java.util.Calendar;
@@ -20,9 +21,17 @@ public class DatosFinalesImpiccato extends javax.swing.JInternalFrame {
         creaHora();
         this.setClosable(true); //Sirve para cerrar la ventana.  
     }
-
-
     
+    private void guardarDatos(){
+        String nombre1 = nomJugador.getText();
+        int puntaje1 = Integer.parseInt(puntajeFinal.getText());
+
+        DataImpicccato datosImpicccato = new DataImpicccato();
+        datosImpicccato.comprobarArchivo();
+        datosImpicccato.usuario(nombre1, puntaje1);
+ 
+    }
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -92,6 +101,7 @@ public class DatosFinalesImpiccato extends javax.swing.JInternalFrame {
     //PARA AGREGAR EN ARCHIVOS
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
         this.setVisible(false);
+        guardarDatos();
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     private void bntVolverJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntVolverJugarActionPerformed

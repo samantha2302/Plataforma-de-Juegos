@@ -5,9 +5,8 @@
  */
 package VentanaPrincipal;
 
-import Culebrita.Culebrita;
+import Culebrita.InicioCulebrita;
 import Impiccato.PrincipalImpiccato;
-import Kitty.Kitty;
 
 
 import Kitty.VentanaInicioKitty;
@@ -126,12 +125,11 @@ public class juegos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        Culebrita culebrita = new Culebrita();
-        escritorio.add(culebrita);
-        culebrita.setVisible(true);
-        culebrita.setLocation(200, 50);
-        
+        this.setVisible(false);
+        InicioCulebrita inicio= InicioCulebrita.Singleton();
+        escritorio.add(inicio);
+        inicio.setVisible(true);
+        inicio.setLocation(280,140);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
