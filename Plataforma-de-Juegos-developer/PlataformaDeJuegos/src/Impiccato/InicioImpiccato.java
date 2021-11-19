@@ -2,7 +2,6 @@ package Impiccato;
 
 import static VentanaPrincipal.VentanaPrincipal.escritorio;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;

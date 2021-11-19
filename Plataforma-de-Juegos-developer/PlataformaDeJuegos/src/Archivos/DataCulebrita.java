@@ -124,6 +124,10 @@ public class DataCulebrita {
                             }else{
                                 if(n.getPuntaje() >= 50){
                                     lbs.setText("Nombre: " + n.getNombre() + " " + " " +" " +" " + " Puntaje: " + n.getPuntaje());
+                            }else{
+                                  if(n.getPuntaje() >= 100){
+                                    lbs.setText("Nombre: " + n.getNombre() + " " + " " +" " +" " + " Puntaje: " + n.getPuntaje());
+                                }  
                             }
                         }
                     }

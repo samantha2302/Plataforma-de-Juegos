@@ -1,5 +1,8 @@
 package Culebrita;
 
+import Archivos.DataCulebrita;
+import static Culebrita.DatosFinalesCulebrita.nombreJu;
+import static Culebrita.DatosFinalesCulebrita.puntaje;
 import static VentanaPrincipal.VentanaPrincipal.escritorio;
 import javax.swing.JOptionPane;
 
@@ -207,10 +210,16 @@ public class Culebrita extends javax.swing.JInternalFrame {
             escritorio.add(data);
             data.setVisible(true);
             data.setLocation(245,70);
-            this.setVisible(false);
+            this.dispose();
             }
         else{
-               this.setVisible(true);
+               this.dispose();
+               String nombre1 = nombreJu.getText();
+               int puntaje1 = Integer.parseInt(puntaje.getText());
+    
+               DataCulebrita dataCulebrita = new DataCulebrita();
+               dataCulebrita.comprobarArchivo();
+               dataCulebrita.usuario(nombre1, puntaje1);
             } 
     }//GEN-LAST:event_jButton1ActionPerformed
 

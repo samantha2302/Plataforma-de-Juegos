@@ -76,7 +76,7 @@ public class PrincipalImpiccato extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel3))))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
+                        .addGap(213, 213, 213)
                         .addComponent(jButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -94,9 +94,9 @@ public class PrincipalImpiccato extends javax.swing.JInternalFrame {
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
                         .addComponent(MemNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(73, 73, 73)
+                        .addGap(60, 60, 60)
                         .addComponent(jButton1)
-                        .addGap(115, 115, 115))))
+                        .addGap(128, 128, 128))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -129,7 +129,7 @@ public class PrincipalImpiccato extends javax.swing.JInternalFrame {
                 inicio.tiempo.start();
                 escritorio.add(inicio);
                 inicio.setVisible(true);
-                inicio.setLocation(210,10);  
+                inicio.setLocation(210,05);  
                 this.setVisible(false);      
             }
         }  

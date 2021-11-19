@@ -110,6 +110,7 @@ public class DatosFinalesImpiccato extends javax.swing.JInternalFrame {
         escritorio.add(ahorcado);
         ahorcado.setVisible(true);
         ahorcado.setLocation(210,35);
+        guardarDatos();
     }//GEN-LAST:event_bntVolverJugarActionPerformed
 
     private void creaHora(){ 

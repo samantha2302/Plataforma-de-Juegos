@@ -168,10 +168,11 @@ public class VentanaInicioKitty extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Ingresa el nombre del jugador antes de iniciar");
             }
             else{
+                this.setVisible(false);
                 Kitty kitty = Kitty.Singleton();
                 escritorio.add(kitty);
                 kitty.setVisible(true);
-                kitty.setLocation(135, 50);
+                kitty.setLocation(290, 130);
             }
         }  
     }//GEN-LAST:event_jButton1ActionPerformed

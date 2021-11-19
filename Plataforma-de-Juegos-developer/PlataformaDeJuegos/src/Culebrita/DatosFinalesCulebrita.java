@@ -28,7 +28,9 @@ public class DatosFinalesCulebrita extends javax.swing.JInternalFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         panelEstadistica = new javax.swing.JPanel();
         panelNombre = new javax.swing.JPanel();
+        nombreJu = new javax.swing.JLabel();
         panelPuntaje = new javax.swing.JPanel();
+        puntaje = new javax.swing.JLabel();
         btnAceptar = new javax.swing.JButton();
 
         panelEstadistica.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Estadistica", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Comic Sans MS", 0, 18))); // NOI18N
@@ -43,9 +45,9 @@ public class DatosFinalesCulebrita extends javax.swing.JInternalFrame {
         panelNombreLayout.setHorizontalGroup(
             panelNombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelNombreLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(nombreJu, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(nombreJu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         panelNombreLayout.setVerticalGroup(
             panelNombreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -64,10 +66,10 @@ public class DatosFinalesCulebrita extends javax.swing.JInternalFrame {
         panelPuntaje.setLayout(panelPuntajeLayout);
         panelPuntajeLayout.setHorizontalGroup(
             panelPuntajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPuntajeLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(puntaje, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPuntajeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(puntaje, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+                .addContainerGap())
         );
         panelPuntajeLayout.setVerticalGroup(
             panelPuntajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,7 +88,7 @@ public class DatosFinalesCulebrita extends javax.swing.JInternalFrame {
                 .addGroup(panelEstadisticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panelPuntaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         panelEstadisticaLayout.setVerticalGroup(
             panelEstadisticaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,14 +116,14 @@ public class DatosFinalesCulebrita extends javax.swing.JInternalFrame {
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap(64, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(panelEstadistica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(191, 191, 191)
-                        .addComponent(btnAceptar)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(panelEstadistica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(btnAceptar)
+                        .addGap(190, 190, 190))))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,8 +164,7 @@ public class DatosFinalesCulebrita extends javax.swing.JInternalFrame {
     private void guardarDatos(){
         String nombre1 = nombreJu.getText();
         int puntaje1 = Integer.parseInt(puntaje.getText());
-        
-        
+
         DataCulebrita dataCulebrita = new DataCulebrita();
         dataCulebrita.comprobarArchivo();
         dataCulebrita.usuario(nombre1, puntaje1);
@@ -172,10 +173,10 @@ public class DatosFinalesCulebrita extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
     private javax.swing.JDesktopPane jDesktopPane1;
-    public final javax.swing.JLabel nombreJu = new javax.swing.JLabel();
+    public static javax.swing.JLabel nombreJu;
     private javax.swing.JPanel panelEstadistica;
     private javax.swing.JPanel panelNombre;
     private javax.swing.JPanel panelPuntaje;
-    public final javax.swing.JLabel puntaje = new javax.swing.JLabel();
+    public static javax.swing.JLabel puntaje;
     // End of variables declaration//GEN-END:variables
 }

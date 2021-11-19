@@ -2,6 +2,7 @@ package Kitty;
 
 import static Kitty.VentanaInicioKitty.jTextFieldO;
 import static Kitty.VentanaInicioKitty.jTextFieldX;
+import Usuarios.Ganador;
 import static VentanaPrincipal.VentanaPrincipal.escritorio;
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -11,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author Sam
  */
-public class Kitty extends javax.swing.JInternalFrame{
+public class Kitty extends javax.swing.JInternalFrame implements Ganador{
     // Variables.
     
     int turno = 1; // Saber el turno
@@ -53,7 +54,7 @@ public class Kitty extends javax.swing.JInternalFrame{
     }
 
     //Esta funcion es para saber el ganador.
-
+    @Override
     public void ganador(){
         //Horizontales
         verificarGanador(lbs[0], lbs[1], lbs[2]);
@@ -83,6 +84,7 @@ public class Kitty extends javax.swing.JInternalFrame{
     
     // Esta funcion a continuacion es para verificar quien gano, cula jugardor, si la computadora
     // o la persona gano.
+    @Override
     public void verificarGanador(JLabel lbs1,JLabel lbs2,JLabel lbs3){
         // Para verificar si gano la 'X'
         // El metodo getText obtiene lo que tiene la etiqueta y lo compara. 
@@ -154,15 +156,15 @@ public class Kitty extends javax.swing.JInternalFrame{
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPuntajeO = new javax.swing.JLabel();
-        jPuntajeX = new javax.swing.JLabel();
         jO = new javax.swing.JLabel();
         jX = new javax.swing.JLabel();
+        jPuntajeX = new javax.swing.JLabel();
         jLabelTurno = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabelPartida = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(415, 415));
+        setPreferredSize(new java.awt.Dimension(410, 410));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -313,9 +315,6 @@ public class Kitty extends javax.swing.JInternalFrame{
         jPuntajeO.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jPuntajeO.setText("O = ");
 
-        jPuntajeX.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        jPuntajeX.setText("X = ");
-
         jO.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jO.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jO.setText("0");
@@ -324,6 +323,9 @@ public class Kitty extends javax.swing.JInternalFrame{
         jX.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jX.setText("0");
 
+        jPuntajeX.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jPuntajeX.setText("X = ");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -331,8 +333,8 @@ public class Kitty extends javax.swing.JInternalFrame{
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPuntajeX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPuntajeO, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
+                    .addComponent(jPuntajeO, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                    .addComponent(jPuntajeX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jO, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -344,12 +346,12 @@ public class Kitty extends javax.swing.JInternalFrame{
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPuntajeO)
-                    .addComponent(jO, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jO, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPuntajeX))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jX, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPuntajeX))
+                    .addComponent(jPuntajeO))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -366,9 +368,9 @@ public class Kitty extends javax.swing.JInternalFrame{
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(20, 20, 20)
                 .addComponent(jLabelPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -394,17 +396,22 @@ public class Kitty extends javax.swing.JInternalFrame{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addComponent(jLabelTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -417,20 +424,19 @@ public class Kitty extends javax.swing.JInternalFrame{
                         .addGap(84, 84, 84))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(53, 53, 53))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton2)
-                        .addGap(61, 61, 61))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -592,7 +598,17 @@ public class Kitty extends javax.swing.JInternalFrame{
     }//GEN-LAST:event_jLabel1MousePressed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+        if(JOptionPane.showConfirmDialog(rootPane,"¿Quieres ver tu puntaje final?","Fin",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
+               this.setVisible(false);
+               EstadisticaFinaKitty kittyy = EstadisticaFinaKitty.Siglenton();
+               escritorio.add(kittyy);
+               kittyy.setLocation(280, 60);
+               kittyy.setVisible(true);
+               kittyy.nombresJugadores();
+            }
+            else{
+                this.setVisible(true);
+            }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
